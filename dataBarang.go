@@ -1,4 +1,4 @@
-// created by Akmal Muzakki, Namira Salsabilla, and Haura Adzkia on 27/01/2023
+// created by Akmal Muzakki on 27/01/2023
 
 package main
 
@@ -38,6 +38,19 @@ func inputData(data *tabDataBarang) {
 		fmt.Println("")
 		data.total++
 	}
+}
+
+func tambahData(data *tabDataBarang) {
+	fmt.Print("Masukkan kode barang: ")
+	fmt.Scan(&data.barang[data.total].kode)
+	fmt.Print("Masukkan nama barang: ")
+	fmt.Scan(&data.barang[data.total].nama)
+	fmt.Print("Masukkan stok barang: ")
+	fmt.Scan(&data.barang[data.total].stok)
+	fmt.Print("Masukkan harga barang per item: ")
+	fmt.Scan(&data.barang[data.total].harga)
+	fmt.Println("")
+	data.total++
 }
 
 func updateHargaData(data *tabDataBarang) {
@@ -198,7 +211,8 @@ func main() {
 		fmt.Println("8. Stok barang terdata paling sedikit")
 		fmt.Println("9. Cari data barang")
 		fmt.Println("10. Urutkan data barang berdasarkan harga")
-		fmt.Println("11. Keluar")
+		fmt.Println("11. Tambah data barang")
+		fmt.Println("12. Keluar")
 
 		fmt.Print("Masukkan pilihan: ")
 		fmt.Scan(&pilihan)
@@ -226,6 +240,8 @@ func main() {
 		case 10:
 			sortHargaDataBarang(&data)
 		case 11:
+			tambahData(&data)
+		case 12:
 			os.Exit(0)
 		default:
 			fmt.Println("Pilihan tidak tersedia")
