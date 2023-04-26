@@ -1,5 +1,3 @@
-// created by Akmal Muzakki on 27/01/2023
-
 package main
 
 import (
